@@ -7,7 +7,7 @@ name = Faker::Name.name
 
 user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "123123")
 
-4.times do
+6.times do
   Coffee.create!(
     brand: Faker::Coffee.brand,
     price: Faker::Commerce.price(range: 0..10.0, as_string: true), # Utiliza a função price da biblioteca Faker
