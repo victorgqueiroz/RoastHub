@@ -1,0 +1,16 @@
+en:
+  faker:
+    coffee:
+      roast:
+        - claro
+        - médio
+        - escuro
+      grind_size:
+        - fino
+        - médio-fino
+        - médio
+        - médio-grosso
+        - grosso
+      brand:
+        - pilão
+        -
