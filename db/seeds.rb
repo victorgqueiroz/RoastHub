@@ -13,11 +13,11 @@ user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, passwo
     price: Faker::Commerce.price(range: 0..10.0, as_string: true), # Utiliza a função price da biblioteca Faker
     description: Faker::Coffee.notes,
     user: user, # ou user_id: user.id
-    region: Faker::Address.country,
+    region: Faker::Coffee.origin,
     bean: Faker::Coffee.variety,
     roast: Faker::Coffee.roast,
     sensory_note: Faker::Coffee.notes,
-    classification: Faker::Number.number(digits: 1),
+    classification: Faker::Number.number(digits: 2),
     grinding: Faker::Coffee.grind_size
   )
   # puts Faker::Number.between(from: 1.0, to: 1000.0)

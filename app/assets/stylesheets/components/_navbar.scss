@@ -1,13 +1,111 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #473939;
+  color: bisque;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+// .navbar {
+//   position: sticky;
+//   width: 1440px;
+//   height: 87px;
+//   left: 0px;
+//   top: 7px;
+//   background: #473939;
+// }
+
+.logo {
+  width: 103px;
+  height: 103px;
 }
 
+// .nav-item {
+//   position: absolute;
+//   font-family: 'Open Sans';
+//   font-style: normal;
+//   font-weight: 300;
+//   font-size: 24px;
+//   line-height: 33px;
+//   color: #FFFFFF;
+// }
+
+// .nav-item:nth-child(2) {
+//   left: 139px;
+//   top: 35px;
+// }
+
+// .nav-item:nth-child(3) {
+//   left: 321px;
+//   top: 35px;
+// }
+
+// .nav-item:nth-child(4) {
+//   left: 500px;
+//   top: 35px;
+// }
+
+// .nav-item:nth-child(5) {
+//   left: 623px;
+//   top: 35px;
+// }
+
+// .search-bar {
+//   box-sizing: border-box;
+//   position: absolute;
+//   width: 444px;
+//   height: 51px;
+//   left: 847px;
+//   top: 26px;
+//   border: 2px solid #FFFFFF;
+//   border-radius: 20px;
+// }
+
+// .search-icon {
+//   position: absolute;
+//   width: 32px;
+//   height: 37px;
+//   left: 1240px;
+//   top: 32px;
+//   font-family: 'Font Awesome 5 Free';
+//   font-style: normal;
+//   font-weight: 900;
+//   font-size: 32px;
+//   line-height: 37px;
+//   color: #FFFFFF;
+// }
+
+// .shop-icon {
+//   position: absolute;
+//   width: 36px;
+//   height: 37px;
+//   left: 1318px;
+//   top: 31px;
+//   font-family: 'Font Awesome 5 Free';
+//   font-style: normal;
+//   font-weight: 900;
+//   font-size: 32px;
+//   line-height: 37px;
+//   color: #FFFFFF;
+// }
+
+// .user-icon {
+//   position: absolute;
+//   width: 31px;
+//   height: 37px;
+//   left: 1381px;
+//   top: 32px;
+//   font-family: 'Font Awesome 5 Free';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 32px;
+//   line-height: 37px;
+//   color: #FFFFFF;
+// }
