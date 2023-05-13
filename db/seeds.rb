@@ -10,7 +10,7 @@ user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, passwo
 4.times do
   Coffee.create!(
     brand: Faker::Coffee.brand,
-    price: Faker::Number.decimal(l_digits: 2, r_digits: 2), # Utiliza a função price da biblioteca Faker
+    price: Faker::Commerce.price(range: 0..10.0, as_string: true), # Utiliza a função price da biblioteca Faker
     description: Faker::Coffee.notes,
     user: user, # ou user_id: user.id
     region: Faker::Address.country,
