@@ -1,7 +1,16 @@
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+<div class="container">
+  <div class="card-product">
+    <img src="https://source.unsplash.com/1600x900/?coffee" />
+    <div class="card-product-infos">
+      <h2>Marca: <%= @coffee.brand %></h2>
+      <p>Região: <%= @coffee.region %></p>
+      <p>Grão: <%= @coffee.bean %></p>
+      <p>Notas sensoriais: <%= @coffee.sensory_note %></p>
+      <p>Clasifficação: <%= @coffee.classification %></p>
+      <p>Moagem: <%= @coffee.grinding %></p>
+      <p>Preco: R$<%= @coffee.price %></p>
+      <p>Descrição: <%= @coffee.description %></p>
+
+    </div>
   </div>
 </div>
