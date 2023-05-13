@@ -5,12 +5,12 @@ name = Faker::Name.name
 #  Coffee.destroy_all # limpa o db do coffee
 #  User.destroy_all # limpa o db do user
 
-# user = User.create!(name: name, email: Faker::Internet.email, password: "123123")
+user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "123123")
 
 4.times do
   Coffee.create!(
     brand: Faker::Coffee.brand,
-    price: Faker:Number.between(from: 1.0, to: 1000.0), # Utiliza a função price da biblioteca Faker
+    price: Faker::Number.decimal(l_digits: 2, r_digits: 2), # Utiliza a função price da biblioteca Faker
     description: Faker::Coffee.notes,
     user: user, # ou user_id: user.id
     region: Faker::Address.country,
