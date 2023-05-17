@@ -1,4 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%# <form class="search-form" id="search">
+      <input type="text" placeholder="Pesquisar" id="search_input">
+      <button type="submit" id="search_btn">Buscar</button>
+    </form> %>
+
+    <%= form_with url: markets_path, method: :get, class: "d-flex", id: "search" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search!", name: "", class: "btn btn-primary" %>
+    <% end %>
+
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", class: "logo" %>
