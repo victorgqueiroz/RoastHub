@@ -14,7 +14,7 @@ class CoffeesController < ApplicationController
   end
 
   def create
-    @coffee = Coffee.new(coffee_params)
+    @coffee = Coffee.new(coffee_params, user: current_user) # caso erro vincular id user
     if @coffee.save
       redirect_to coffee_path(@coffee)
     else
@@ -44,6 +44,6 @@ class CoffeesController < ApplicationController
   private
 
   def coffee_params
-    params.require(:coffee).permit(:name, :description)
+    params.require(:coffee).permit(:brand, :description, :region, :price, :roast, :sensory_note, :classification, :grinding)
   end
 end

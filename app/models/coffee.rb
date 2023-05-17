@@ -1,5 +1,8 @@
 class Coffee < ApplicationRecord
   belongs_to :user
+  validates :region, :bean, :sensory_note, :classification, :grinding, :brand, :price, :description, :roast, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 0 }
+  validates :classification, inclusion: { in: 85..100 }
 
   def fetch_random_coffee_image
     response = RestClient.get 'https://api.unsplash.com/photos/random?query=coffee', {params: {client_id: OC47tUJ8sTjie4ghNrAo03aUPDi_OCxB8FP1rPaohFI}}
