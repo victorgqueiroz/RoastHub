@@ -3,9 +3,9 @@ class Market < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :brand ],
-    # associated_against: {
-    #   coffees: [ :region, :grinding ]
-    # },
+    associated_against: {
+      coffees: [ :region, :grinding ]
+    },
     using: {
       tsearch: { prefix: true }
     }
@@ -16,5 +16,5 @@ class Market < ApplicationRecord
       data = JSON.parse(response.body)
       data["urls"]["small"]
     end
-    
+
 end
