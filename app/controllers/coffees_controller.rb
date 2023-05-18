@@ -28,7 +28,7 @@ class CoffeesController < ApplicationController
 
   def update
     @coffee = Coffee.find(params[:id])
-    if @coffee.update(coffee_params)
+    if @coffee.update(coffee_params) #caso user prop do café permitir update
       redirect_to coffee_path(@coffee)
     else
       render :edit
