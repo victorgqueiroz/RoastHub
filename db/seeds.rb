@@ -1,9 +1,9 @@
 require "faker"
 
 Faker::Config.locale = 'en'
-name = Faker::Name.name
-#  Coffee.destroy_all # limpa o db do coffee
-#  User.destroy_all # limpa o db do user
+
+  # Coffee.destroy_all # limpa o db do coffee
+  # User.destroy_all # limpa o db do user
 
 user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "123123")
 
@@ -17,7 +17,7 @@ user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, passwo
     bean: Faker::Coffee.variety,
     roast: Faker::Coffee.roast,
     sensory_note: Faker::Coffee.notes,
-    classification: Faker::Number.number(digits: 2),
+    classification: Faker::Number.between(from: 85, to: 100),
     grinding: Faker::Coffee.grind_size
   )
   # puts Faker::Number.between(from: 1.0, to: 1000.0)

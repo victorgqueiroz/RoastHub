@@ -1,5 +1,8 @@
 class Coffee < ApplicationRecord
   belongs_to :user
+  validates :region, :bean, :sensory_note, :classification, :grinding, :brand, :price, :description, :roast, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 0 }
+  validates :classification, inclusion: { in: 85..100 }
 
   include PgSearch::Model
   pg_search_scope :global_search,
@@ -17,5 +20,4 @@ class Coffee < ApplicationRecord
     data = JSON.parse(response.body)
     data["urls"]["small"]
   end
-
 end
