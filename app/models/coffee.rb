@@ -5,11 +5,11 @@ class Coffee < ApplicationRecord
   validates :classification, inclusion: { in: 85..100 }
 
   include PgSearch::Model
-  pg_search_scope :global_search,
+  pg_search_scope :search_coffee,
     against: [ :brand ],
-    # associated_against: {
-    #   coffees: [ :region, :grinding ]
-    # },
+    associated_against: {
+      coffees: [ :region, :grinding ]
+    },
     using: {
       tsearch: { prefix: true }
     }
