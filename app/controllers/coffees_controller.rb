@@ -14,7 +14,8 @@ class CoffeesController < ApplicationController
   end
 
   def create
-    @coffee = Coffee.new(coffee_params, user: current_user) # caso erro vincular id user
+    @coffee = Coffee.new(coffee_params)
+    @coffee.user = current_user
     if @coffee.save
       redirect_to coffee_path(@coffee)
     else
@@ -38,12 +39,16 @@ class CoffeesController < ApplicationController
   def destroy
     @coffee = Coffee.find(params[:id])
     @coffee.destroy
-    redirect_to coffees_path
+    redirect_to root_path, status: :see_other
+  end
+
+  def my
+    @coffees = Coffee.where(user: current_user)
   end
 
   private
 
   def coffee_params
-    params.require(:coffee).permit(:brand, :description, :region, :price, :roast, :sensory_note, :classification, :grinding)
+    params.require(:coffee).permit(:brand, :description, :region, :price, :roast, :sensory_note, :classification, :grinding, :bean)
   end
 end

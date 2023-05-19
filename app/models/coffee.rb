@@ -10,5 +10,4 @@ class Coffee < ApplicationRecord
     data = JSON.parse(response.body)
     data["urls"]["small"]
   end
-
 end
