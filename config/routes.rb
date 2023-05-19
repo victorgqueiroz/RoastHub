@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get :my
     end
   end
+  resources :devise
+  resources :markets
   root to: "coffees#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

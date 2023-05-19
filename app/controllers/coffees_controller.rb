@@ -2,7 +2,11 @@ class CoffeesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @coffees = Coffee.all
+    if params[:query]
+      @coffees = Coffee.global_search(params[:query])
+    else
+      @coffees = Coffee.all
+    end
   end
 
   def show
