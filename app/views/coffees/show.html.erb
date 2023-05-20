@@ -12,14 +12,14 @@
           <p>Descrição: <%= @coffee.description %></p>
           <div id="button-div">
           <% if @coffee.user == current_user %>
-          <%= link_to "Edit this coffee", edit_coffee_path(@coffee), class: "btn btn-primary" %>
-          <%= button_to "Delete this coffee", coffee_path(@coffee), method: :delete, class: "btn btn-primary" %>
+          <%= link_to "Editar esse café", edit_coffee_path(@coffee), class: "btn btn-primary" %>
+          <%= button_to "Deletar esse café", coffee_path(@coffee), method: :delete, class: "btn btn-primary" %>
           <% end %>
-          <%= link_to "Back to all coffees", coffees_path, class: "btn btn-return" %>
+          <%= link_to "Voltar para os cafés", coffees_path, class: "btn btn-return" %>
+          <% if @coffee.user != current_user %>
+          <%= button_to "Comprar!", sales_path(coffee_id: @coffee.id), method: :post, class: "btn btn-primary" %>
+          <% end %>
           </div>
       </div>
-        <% if @coffee.user != current_user %>
-          <%= button_to "Comprar!", sales_path(coffee_id: @coffee.id), method: :post %>
-        <% end %>
       </div>
 </div>

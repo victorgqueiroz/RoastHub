@@ -3,6 +3,7 @@
 }
 
 .card-product img {
+  text-decoration: none;
   position: absolute;
   width: 501px;
   height: 250px;
@@ -12,6 +13,7 @@
   background: #D9D9D9;}
 
   .card-product-infos {
+    text-decoration: none;
     position: absolute;
     width: 700px;
     height: 82px;
@@ -23,10 +25,12 @@
     font-size: 20px;
     line-height: 15px;
     color: #000000;
+
   }
 
 
   .buy {
+    text-decoration: none;
     position: absolute;
     width: 347px;
     height: 65px;
@@ -50,11 +54,13 @@
 
   }
    .buy:hover {
+    text-decoration: none;
     text-decoration-line: underline;
     color: #FFFFFF;
   }
 
   .comment-box {
+    text-decoration: none;
     position: absolute;
     width: 593px;
     height: 160px;
@@ -65,6 +71,7 @@
   }
 
   .btn{
+    font-family: 'Open Sans';
     display: inline-block;
     background-color: #7A2308;
     &:hover{
@@ -73,11 +80,13 @@
   }
 
   #button-div{
+    font-family: 'Open Sans';
     gap: 10px;
     display: flex;
   }
 
   .btn-return{
+    font-family: 'Open Sans';
     color:#FFFFFF;
     &:hover{
       background-color: #7A2308;
