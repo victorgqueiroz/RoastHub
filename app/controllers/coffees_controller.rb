@@ -1,6 +1,6 @@
 class CoffeesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
+  # push da branch
   def index
     @coffees = Coffee.all
   end
