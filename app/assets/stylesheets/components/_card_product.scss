@@ -1,33 +1,85 @@
-.card-product {
-  overflow: hidden;
-  height: 300px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  
+.container{
+  // display: flex;
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+  position: absolute;
+  width: 501px;
+  height: 250px;
+  left: 39px;
+  top: 100px;
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+  background: #D9D9D9;}
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+  .card-product-infos {
+    position: absolute;
+    width: 700px;
+    height: 82px;
+    left: 600px;
+    top: 107px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 15px;
+    color: #000000;
+  }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
+
+  .buy {
+    position: absolute;
+    width: 347px;
+    height: 65px;
+    left: 877px;
+    top: 505px;
+    display: flex;
+    background: #7A2308;
+    border-radius: 20px;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left: 950px;
+    top: 400px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 40px;
+    color: #FFFFFF;
+    justify-content: space-around;
+
+  }
+   .buy:hover {
+    text-decoration-line: underline;
+    color: #FFFFFF;
+  }
+
+  .comment-box {
+    position: absolute;
+    width: 593px;
+    height: 160px;
+    left: 26px;
+    top: 474px;
+    background: #FFFBFB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn{
+    display: inline-block;
+    background-color: #7A2308;
+    &:hover{
+      background-color: #7A2308;
+    }
+  }
+
+  #button-div{
+    gap: 10px;
+    display: flex;
+  }
+
+  .btn-return{
+    color:#FFFFFF;
+    &:hover{
+      background-color: #7A2308;
+    }
+  }

@@ -1,18 +1,25 @@
-  <div class="card-product">
-    <img src="https://source.unsplash.com/1600x900/?coffee" />
-    <div class="card-product-infos">
-      <h2>Marca: <%= @coffee.brand %></h2>
-      <p>Região: <%= @coffee.region %></p>
-      <p>Grão: <%= @coffee.bean %></p>
-      <p>Notas sensoriais: <%= @coffee.sensory_note %></p>
-      <p>Clasifficação: <%= @coffee.classification %></p>
-      <p>Moagem: <%= @coffee.grinding %></p>
-      <p>Preco: R$<%= @coffee.price %></p>
-      <p>Descrição: <%= @coffee.description %></p>
-      <% if @coffee.user == current_user %>
-      <%= link_to "Edit this coffee", edit_coffee_path(@coffee) %>
-      <%= button_to "Delete this coffee", coffee_path(@coffee), method: :delete %>
-      <% end %>
-      <%= button_to "Comprar!", sales_path(coffee_id: @coffee.id), method: :post %>
-    </div>
-  </div>
+  <div class="container">
+    <div class="card-product">
+      <img src="https://source.unsplash.com/1600x900/?coffee" />
+        <div class="card-product-infos">
+          <h2>Marca: <%= @coffee.brand %></h2>
+          <p>Região: <%= @coffee.region %></p>
+          <p>Grão: <%= @coffee.bean %></p>
+          <p>Notas sensoriais: <%= @coffee.sensory_note %></p>
+          <p>Clasifficação: <%= @coffee.classification %></p>
+          <p>Moagem: <%= @coffee.grinding %></p>
+          <p>Preco: R$<%= @coffee.price %></p>
+          <p>Descrição: <%= @coffee.description %></p>
+          <div id="button-div">
+          <% if @coffee.user == current_user %>
+          <%= link_to "Edit this coffee", edit_coffee_path(@coffee), class: "btn btn-primary" %>
+          <%= button_to "Delete this coffee", coffee_path(@coffee), method: :delete, class: "btn btn-primary" %>
+          <% end %>
+          <%= link_to "Back to all coffees", coffees_path, class: "btn btn-return" %>
+          </div>
+      </div>
+        <% if @coffee.user != current_user %>
+          <%= button_to "Comprar!", sales_path(coffee_id: @coffee.id), method: :post %>
+        <% end %>
+      </div>
+</div>
