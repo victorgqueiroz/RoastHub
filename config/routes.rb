@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+  resources :devise
   devise_for :users do
     resources :sales, only: [:new, :create]
   end
   resources :coffees do
     resources :sales, only: [:new, :create]
+    collection do
+      get :my
+      get :market
+    end
   end
   root to: "coffees#index"
   resources :sales
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  #merge
+  
   # Defines the root path route ("/")
   # root "articles#index"
 end
