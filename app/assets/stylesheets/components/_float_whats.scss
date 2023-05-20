@@ -1,0 +1,10 @@
+.button {
+  font-size: 24px;  /* tamanho do ícone */
+  color: white;     /* cor do ícone */
+  background-color: #25D366;  /* cor de fundo do WhatsApp */
+  border-radius: 50%;   /* tornar o botão circular */
+  padding: 10px;    /* espaço ao redor do ícone */
+  position: fixed;  /* fixar o botão na tela */
+  bottom: 20px;     /* distância do fundo da tela */
+  right: 20px;      /* distância do lado direito da tela */
+}

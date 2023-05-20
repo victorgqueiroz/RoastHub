@@ -17,7 +17,9 @@
           <% end %>
           <%= link_to "Voltar para os cafés", coffees_path, class: "btn btn-return" %>
           <% if @coffee.user != current_user %>
-          <%= button_to "Comprar!", sales_path(coffee_id: @coffee.id), method: :post, class: "btn btn-primary" %>
+          <%= simple_form_for [@coffee, Sale.new] do |f| %>
+          <%= f.submit "Comprar!", class: "btn btn-primary" %>
+          <% end %>
           <% end %>
           </div>
       </div>
