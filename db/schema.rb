@@ -61,3 +61,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_001749) do
   add_foreign_key "sales", "coffees"
   add_foreign_key "sales", "users"
 end
+#tr
