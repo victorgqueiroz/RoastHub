@@ -61,27 +61,3 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_001749) do
   add_foreign_key "sales", "coffees"
   add_foreign_key "sales", "users"
 end
-
-class Coffee < ApplicationRecord
-  belongs_to :user
-
-  validates :region, :bean, :sensory_note, :classification, :grinding, :brand, :price, :description, :roast, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 0 }
-  validates :classification, inclusion: { in: 1..5 }
-end
-
-class Sale < ApplicationRecord
-  belongs_to :user
-  belongs_to :coffee
-
-  validates presence: true
-end
-
-class User < ApplicationRecord
-  has_many :coffees
-  has_many :sales
-
-  validates :email, presence: true, uniqueness: true
-#  validates :encrypted_password, presence: true
-  validates :name, presence: true
-end
