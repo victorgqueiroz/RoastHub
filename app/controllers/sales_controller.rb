@@ -1,6 +1,6 @@
 class SalesController < ApplicationController
   # before_action :set_sale, only: [:show]
-
+  #push
   def index
     @sales = current_user.sales
     @user = current_user
