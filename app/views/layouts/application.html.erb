@@ -16,7 +16,9 @@
       <%= render "shared/flashes" %>
       <div class="container" style="min-height: calc(100vh - 80px)">
         <%= yield %>
-        <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" %>
+        <%= link_to "https://wa.me/1234567890?text=Olá,%20eu%20gostaria%20de%20mais%20informações." do %>
+            <i class="fab fa-whatsapp button"></i>
+        <% end %>
       </div>
       <%= render "shared/footer" %>
     </div>
