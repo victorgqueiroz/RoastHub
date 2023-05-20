@@ -32,6 +32,3 @@ class SalesController < ApplicationController
     params.require(:sales).permit(:coffee_id, :user_id)
   end
 end
-
-
-# Em rotas:  resources :sales, only: [:create, :update, :destroy, :show]
