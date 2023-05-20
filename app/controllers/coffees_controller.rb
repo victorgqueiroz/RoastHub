@@ -1,6 +1,6 @@
 class CoffeesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  # push da branch
+  skip_before_action :authenticate_user!, only: [:index, :show, :market]
+
   def index
     if params[:query]
       @coffees = Coffee.global_search(params[:query])
