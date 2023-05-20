@@ -1,59 +1,37 @@
 class SalesController < ApplicationController
-  before_action :authenticate_user!
-
-  def create
-    @coffee = Coffee.find(params[:coffee_id])
-    @sales
-  end
+  # before_action :set_sale, only: [:show]
 
   def index
-      @sales = Sale.all
-  end
-
-  def new
-      @sale = Sale.new
+    @sales = current_user.sales
+    @user = current_user
   end
 
   def create
-      @sale = Sale.new(sale_params)
-      if @sale.save
-        redirect_to @sale, notice: "Sale created successfully."
-      else
-        render :new
-      end
-  end
+    # @sale = current_user.sales.build(sale_params.merge(coffee: @coffee))
+    @coffee = Coffee.find(params[:coffee_id])
+    @sale = Sale.new(user: current_user, coffee: @coffee)
 
-  def show
-      @sale = Sale.find(params[:id])
-  end
-
-  def edit
-      @sale = Sale.find(params[:id])
-  end
-
-  def update
-      @sale = Sale.find(params[:id])
-    if @sale.update(sale_params)
-      redirect_to @sale, notice: "Sale updated successfully."
+    if @sale.save
+      redirect_to sale_path(@sale), notice: 'Sale was successfully created.'
     else
-      render :edit
+      render coffee_path(coffee_id: @coffee.id), status: :unprocessable_entity
     end
   end
 
-  def destroy
+  def show
     @sale = Sale.find(params[:id])
-    @sale.destroy
-    redirect_to sales_path, notice: "Sale deleted successfully."
+  end
+
+  # private
+
+  # def set_sale
+  #   @sale = Sale.find(params[:id])
+  # end
+
+  def sale_params
+    params.require(:sales).permit(:coffee_id, :user_id)
   end
 end
 
-private
 
-  def sale_params
-    params.require(:sale).permit(:user_id, :coffee_id)
-  end
-
-  def set_coffee_and_user
-    @coffees = Coffee.all
-    @users = User.all
-  end
+# Em rotas:  resources :sales, only: [:create, :update, :destroy, :show]

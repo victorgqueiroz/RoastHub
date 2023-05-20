@@ -1,0 +1,14 @@
+<h1> Sales</h1>
+    <p>
+      <strong>User:</strong>
+      <%= @user.name %>
+    </p>
+  <% @sales.each do |sale| %>
+    <p>
+      <strong>Coffee:</strong>
+      <%= sale.coffee.brand %><br>
+      <strong>Price:</strong> R$
+      <%= sale.coffee.price %>
+    </p>
+
+  <% end %>
