@@ -4,6 +4,7 @@ class Coffee < ApplicationRecord
   validates :classification, inclusion: { in: 85..100 }
   has_many :sales
   has_many :users, through: :sales
+  belongs_to :user
 
   # include PgSearch::Model
   # pg_search_scope :search_coffee,

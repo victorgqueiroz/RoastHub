@@ -18,6 +18,7 @@ class CoffeesController < ApplicationController
     @coffee = Coffee.new
   end
 
+
   def create
     @coffee = Coffee.new(coffee_params)
     @coffee.user = current_user
