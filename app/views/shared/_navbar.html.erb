@@ -4,7 +4,7 @@
       <button type="submit" id="search_btn">Buscar</button>
     </form> %>
 
-    <%= form_with url: markets_path, method: :get, class: "d-flex", id: "search" do %>
+    <%= form_with url: coffees_path, method: :get, class: "d-flex", id: "search" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",

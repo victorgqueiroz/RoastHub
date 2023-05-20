@@ -5,8 +5,9 @@ class CoffeesController < ApplicationController
     if params[:query]
       @coffees = Coffee.global_search(params[:query])
     else
-      @coffees = Coffee.all
+      @coffees = Coffee.all.first(6)
     end
+    # @coffees = Coffee.all.first(6)
   end
 
   def show
@@ -48,6 +49,13 @@ class CoffeesController < ApplicationController
 
   def my
     @coffees = Coffee.where(user: current_user)
+  end
+
+  def market
+    @coffees = Coffee.global_search(params[:query])
+    @coffees = Coffee.all if @coffees.empty?
+
+    # @coffees = Coffee.all
   end
 
   private
