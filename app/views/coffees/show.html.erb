@@ -19,7 +19,7 @@
           </div>
       </div>
         <% if @coffee.user != current_user %>
-          <p class="buy">Comprar</p>
+          <%= button_to "Comprar!", sales_path(coffee_id: @coffee.id), method: :post %>
         <% end %>
       </div>
 </div>
