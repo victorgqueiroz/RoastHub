@@ -9,6 +9,10 @@
       <p>Moagem: <%= @coffee.grinding %></p>
       <p>Preco: R$<%= @coffee.price %></p>
       <p>Descrição: <%= @coffee.description %></p>
+      <% if @coffee.user == current_user %>
+      <%= link_to "Edit this coffee", edit_coffee_path(@coffee) %>
+      <%= button_to "Delete this coffee", coffee_path(@coffee), method: :delete %>
+      <% end %>
 
     </div>
   </div>

@@ -5,6 +5,58 @@
   height: 80px;
 }
 
+/* Search_Icon */
+
+#search_input {
+
+  position: relative;
+  width: 400px;
+  height: 42px;
+
+
+}
+
+#search {
+  /* Search_Bar */
+
+
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 444px;
+  height: 51px;
+  left: 847px;
+  top: 13px;
+  border: 2px solid #FFFFFF;
+  border-radius: 20px;
+  display: none;
+
+}
+
+
+#search_btn{
+
+  position: absolute;
+  width: 32px;
+  height: 37px;
+  left: 1240px;
+  top: 32px;
+
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 37px;
+  /* identical to box height */
+
+
+  color: #FFFFFF;
+}
+
+
+
+
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
