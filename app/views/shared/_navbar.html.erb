@@ -1,23 +1,26 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%# <form class="search-form" id="search">
-      <input type="text" placeholder="Pesquisar" id="search_input">
-      <button type="submit" id="search_btn">Buscar</button>
-    </form> %>
-
-    <%= form_with url: coffees_path, method: :get, class: "d-flex", id: "search" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search!", name: "", class: "btn btn-primary" %>
-    <% end %>
-
 
 
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", class: "logo" %>
+    <% end %>
+<div class="col-6 d-flex">
+    <p class="me-3 mt-3">Qual método?</p>
+    <p class="me-3 mt-3">Mais vendidos</p>
+    <p class="me-3 mt-3">Especiais</p>
+    <p class="me-3 mt-3">Historia do café</p>
+</div>
+
+    <%= form_with url: coffees_path, method: :get, class: "d-flex", id: "search" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control input-form",
+            placeholder: "Type a keyword"
+        %>
+      <%= button_tag(type: "submit", class: "btn btn-icon") do %>
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      <% end %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,25 +30,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item me-4">
+              <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "My Page",  my_coffees_path, class: "dropdown-item mt-2" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
+            <%= link_to "Login", new_user_session_path, class: "dropdown-item me-4" %>
           </li>
         <% end %>
       </ul>
