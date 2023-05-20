@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" %>
   </head>
 
   <body>
@@ -15,6 +16,7 @@
       <%= render "shared/flashes" %>
       <div class="container" style="min-height: calc(100vh - 80px)">
         <%= yield %>
+        <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" %>
       </div>
       <%= render "shared/footer" %>
     </div>

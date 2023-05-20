@@ -1,1 +1,6 @@
-<h1> Teste </h1>
+<h1> Compra confirmada </h1>
+
+<p>coffee: <%= @sale.coffee.brand %></p>
+<p>Buyer <%= @sale.user.name %></p>
+<p>Saler <%= @sale.coffee.user.name %></p>
+<%= link_to "Ver todos os cafés", coffees_path %>
