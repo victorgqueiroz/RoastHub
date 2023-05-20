@@ -2,12 +2,12 @@ class CoffeesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # if params[:query]
-    #   @coffees = Coffee.search_coffee(params[:query])
-    # else
-    #   @coffees = Coffee.all.first(6)
-    # end
-    @coffees = Coffee.all.first(6)
+    if params[:query]
+      @coffees = Coffee.global_search(params[:query])
+    else
+      @coffees = Coffee.all.first(6)
+    end
+    # @coffees = Coffee.all.first(6)
   end
 
   def show
@@ -52,10 +52,10 @@ class CoffeesController < ApplicationController
   end
 
   def market
-    # @coffees = Coffee.search_coffee(params[:query]) if params[:query]
-    # @coffees = Coffee.all if @coffees.nil?
+    @coffees = Coffee.global_search(params[:query])
+    @coffees = Coffee.all if @coffees.empty?
 
-    @coffees = Coffee.all
+    # @coffees = Coffee.all
   end
 
   private
