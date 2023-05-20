@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: "coffees#index"
   resources :sales
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-#merge
+  #merge
   # Defines the root path route ("/")
   # root "articles#index"
 end
