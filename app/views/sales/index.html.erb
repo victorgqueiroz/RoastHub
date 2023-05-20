@@ -1,15 +1,17 @@
-<h1> Sales</h1>
+<h1> Minhas compras</h1>
     <p>
-      <strong>User:</strong>
+      <strong>Comprador:</strong>
       <%= @user.name %>
     </p>
   <% @sales.each do |sale| %>
     <p>
-      <strong>Coffee:</strong>
+      <strong>Café:</strong>
       <%= sale.coffee.brand %><br>
-      <strong>Price:</strong> R$
+      <strong>Preço:</strong> R$
       <%= sale.coffee.price %>
-      
+       <strong>Preço:</strong> R$
+      <%= sale.coffee.user.name %>
+
     </p>
 
   <% end %>
